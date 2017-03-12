@@ -26,9 +26,6 @@ public interface ApiInterface {
     @GET(NetworkURL.GET_ARTICLES)
     Call<List<Article>> getArticles();
 
-    @GET(NetworkURL.CHECK_LOGIN)
-    Call<MessageResponse> checkLogin();
-
     @GET(NetworkURL.LOGOUT)
     Call<Void> logout();
 

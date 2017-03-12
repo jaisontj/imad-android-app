@@ -44,26 +44,6 @@ public class AuthenticationActivity extends BaseActivity {
                 }
             }
         });
-
-        //Check for login
-        showProgressDialog(true);
-        ApiManager.getApiInterface().checkLogin()
-                .enqueue(new CheckLoginResponseListener());
-
-    }
-
-    public class CheckLoginResponseListener extends CustomResponseListener<MessageResponse> {
-
-        @Override
-        public void onSuccessfulResponse(MessageResponse response) {
-            showProgressDialog(false);
-            ArticleListActivity.startActivity(AuthenticationActivity.this);
-        }
-
-        @Override
-        public void onFailureResponse(ErrorResponse errorResponse) {
-            showProgressDialog(false);
-        }
     }
 
     private Boolean isFormValid() {

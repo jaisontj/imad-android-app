@@ -9,6 +9,5 @@ class NetworkURL {
     static final String LOGIN = "login";
     static final String REGISTERATION = "create-user";
     static final String GET_ARTICLES = "get-articles";
-    static final String CHECK_LOGIN = "check-login";
     static final String LOGOUT = "logout";
 }
