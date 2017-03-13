@@ -96,7 +96,7 @@ public class ArticleListActivity extends BaseActivity {
         @Override
         public void onSuccessfulResponse(Void response) {
             showProgressDialog(false);
-            finish();
+            AuthenticationActivity.startActivity(ArticleListActivity.this);
         }
 
         @Override

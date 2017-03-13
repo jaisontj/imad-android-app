@@ -1,5 +1,7 @@
 package com.jaison.myblog.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,9 +19,17 @@ public class AuthenticationActivity extends BaseActivity {
 
     EditText username, password;
 
+    public static void startActivity(Activity startingActivity) {
+        Intent intent = new Intent(startingActivity, AuthenticationActivity.class);
+        startingActivity.startActivity(intent);
+
+        //To clear the stack, so that the user cannot go back to the authentication activity on hardware back press
+        startingActivity.finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Sign In or Register");
         setContentView(R.layout.activity_authentication);
 
         username = (EditText) findViewById(R.id.username);
